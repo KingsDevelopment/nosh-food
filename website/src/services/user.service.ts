@@ -4,7 +4,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { UserApi } from '../sdk/services';
 import { User } from '../sdk/models';
 
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class UserService {

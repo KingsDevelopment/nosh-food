@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
@@ -22,10 +21,13 @@ import { appRoutes } from './app.routes';
 import { UserService, ValidationService, LogService } from '../services';
 
 // guards
-import { IsAuthenticatedGuard } from '../guards';
+import { AuthGuard } from '../guards';
 
 // environment
 import { environment } from '../environments/environment';
+
+// modules
+import { BaseModule, LoginModule } from './modules';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,6 @@ import { environment } from '../environments/environment';
   imports: [
     // core
     BrowserModule,
-    FormsModule,
     HttpModule,
     RouterModule,
 
@@ -46,7 +47,11 @@ import { environment } from '../environments/environment';
     SimpleNotificationsModule.forRoot(),
 
     // routes
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+
+    // modules
+    BaseModule,
+    LoginModule
   ],
   providers: [
     // services
@@ -55,7 +60,7 @@ import { environment } from '../environments/environment';
     ValidationService,
 
     // guards
-    IsAuthenticatedGuard
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

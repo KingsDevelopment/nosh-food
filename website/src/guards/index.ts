@@ -1,1 +1,1 @@
-export { IsAuthenticatedGuard } from './authenticated.guard';
+export { AuthGuard } from './auth.guard';
