@@ -18,7 +18,7 @@ services:
     volumes:
       - /var/log/docker/snapleaks_frontend:/var/log
       - "${PATH_TO_FRONTEND}:/project"
-      - "${PATH_TO_SDK}:/project/src/app/sdk"
+      - "${PATH_TO_SDK}:/project/src/sdk"
     networks:
       - snapleaks
       - proxy-tier
